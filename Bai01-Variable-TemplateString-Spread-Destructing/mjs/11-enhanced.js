@@ -5,7 +5,7 @@
 }
 console.log(getCourse("ES6",20,false));*/
 
-/*=======Method Properties===========*/
+/*======= Method Properties ===========*/
 /*function getCourse(name, price, free)
 {
 	return {name,price,free,
@@ -27,7 +27,7 @@ var myCourse = getCourse("ES6",20,false);
 myCourse.showInfo3(" - ");
 console.log(myCourse);*/
 
-/*=======Computed Properties Names: Các thuộc tính có thể thay đổi được===========*/
+/*=======Computed Properties Names: Các thuộc tính có thể thay đổi được ===========*/
 let propPrefix = "support_123";
 let bootstrapSupport = {
 	[propPrefix + "chorme"]: true,
