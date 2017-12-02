@@ -1,0 +1,4 @@
+Tài Nguyên hoc tap: 
+	+ http://definitelytyped.org/directory/learn.html
+	+ http://www.typescriptlang.org/community/index.html
+"exclude": Đưa vào những phần tử không cần biên dịch
