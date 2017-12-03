@@ -14,5 +14,4 @@ elm = 'ABC 123';
 // template String
 elm = `Free: ${free} - Score: ${score}`;
 console.log(elm);
-
 //
