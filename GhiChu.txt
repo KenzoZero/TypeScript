@@ -1,5 +1,10 @@
-+ Tài Nguyên hoc tap: 
+﻿+ Tài Nguyên hoc tap: 
 	+ http://definitelytyped.org/directory/learn.html
 	+ http://www.typescriptlang.org/community/index.html
 "exclude": Đưa vào những phần tử không cần biên dịch
 + Sau khi config trong file. lệnh cần biên dịch: tsc.
+
+*= Kiểu dữ liệu Any: Đối với kiểu dữ liệu Any thì ta có thể khai báo 1 biến kiểu dữ liệu này nếu như chúng ta chưa xác định được biển này
+thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không gán giá trị khác được nhưng enum thì lại được
+
+
