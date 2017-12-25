@@ -9,3 +9,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 *= Kiểu void : thường sử dựng trong việc quyết định kiểu trả về của 1 function nào đó
 
+*= Type assertions: Giúp cho chúng ta chuyển đổi qua lại các kiểu dữ liệu với nhau.
+

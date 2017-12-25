@@ -1,3 +1,4 @@
+/*
 function showInfo() : void
 {
 	console.log("Hello void");
@@ -6,3 +7,4 @@ function showInfo() : void
 showInfo();
 
 let abc:number;
+*/

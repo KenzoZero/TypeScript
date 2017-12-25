@@ -1,10 +1,6 @@
 // Kiểu dữ liệu Enum
-var STATUS;
-(function (STATUS) {
-    STATUS[STATUS["created"] = 100] = "created";
-    STATUS[STATUS["process"] = 900] = "process";
-    STATUS[STATUS["finish"] = 500] = "finish";
-})(STATUS || (STATUS = {}));
-;
-let todoStatus = STATUS.finish;
-console.log(todoStatus);
+/*enum STATUS {created = 100,process = 900,finish = 500};
+
+let todoStatus : STATUS = STATUS.finish;
+
+console.log(todoStatus);*/ 
