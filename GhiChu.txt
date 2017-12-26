@@ -16,5 +16,7 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 	
 *= Interface Arrays:
 	+ Muốn quy định lại chỉ số có kiểu dữ liệu là gì, giá trị có kiểu dữ liệu là gì ta dùng Interface Arrays
+	
+*=  Hàm: kiểu void: đồng nghĩa hàm này in ra 1 kết quả nào đó.
 
 
