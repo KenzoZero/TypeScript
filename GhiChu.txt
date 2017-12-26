@@ -13,5 +13,8 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 *= Interface Object:
 	+ Dấu chấm hỏi nghĩa là thuộc tính có cũng được không có cũng được
+	
+*= Interface Arrays:
+	+ Muốn quy định lại chỉ số có kiểu dữ liệu là gì, giá trị có kiểu dữ liệu là gì ta dùng Interface Arrays
 
 
