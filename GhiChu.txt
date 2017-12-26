@@ -11,3 +11,7 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 *= Type assertions: Giúp cho chúng ta chuyển đổi qua lại các kiểu dữ liệu với nhau.
 
+*= Interface Object:
+	+ Dấu chấm hỏi nghĩa là thuộc tính có cũng được không có cũng được
+
+
