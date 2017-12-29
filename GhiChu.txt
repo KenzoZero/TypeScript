@@ -22,3 +22,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 *= Reast Parameters: 
 
 *= Arrow function Khi đề cập đến arrow function thì từ khóa function không còn nữa.
+
+*= Kỹ thuật overload: Xảy ra khi khai báo 1 function 2 lần => giải quyết: dùng kỹ thuật overload
