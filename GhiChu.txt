@@ -20,3 +20,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 *=  Hàm: kiểu void: đồng nghĩa hàm này in ra 1 kết quả nào đó.
 
 *= Reast Parameters: 
+
+*= Arrow function Khi đề cập đến arrow function thì từ khóa function không còn nữa.
