@@ -25,8 +25,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 *= Kỹ thuật overload: Xảy ra khi khai báo 1 function 2 lần => giải quyết: dùng kỹ thuật overload
 
-
-let tasks: TaskInterface[] = [
-	task1,
-	task2
-];
+==========OOP============= :
+*= Ý nghĩa từ khóa static: lấy ra giá trị mà ko cần khai báo đối tượng

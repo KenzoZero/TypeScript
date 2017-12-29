@@ -1,6 +1,5 @@
 // Định nghĩa là veriable Interface
-
-/*enum TaskState
+enum TaskState
 {
 	Created = 100,
 	Active,
@@ -16,33 +15,37 @@ interface TaskInterface
 }
 class TaskService
 {
-	tasks : TaskInterface[];
+	public static username: string = "peter";
+	static tasks : TaskInterface[];
 	constructor(tasks: TaskInterface[])
 	{
-		this.tasks = tasks;
+		TaskService.tasks = tasks;
 	}
 	// Phuong thức trả về danh sách các công việc trong 1 ngày
 	getItems()
 	{
-		return this.tasks;
+		return TaskService.tasks;
+	}
+
+	static showItemInfo():void
+	{
+		for(let task of TaskService.tasks)
+		{
+			console.log(`${TaskService.username} - ${task.name}`);
+		}
 	}
 }
 
-let task1:TaskInterface = {id:1,name:"Coding"};
-let task2:TaskInterface = {id:2,name:"Studying ES6"};*/
-
-/*
 let tasks: TaskInterface[] = [
-	{id:1,name:"Coding"}
 	{id:1,name:"Coding"},
-];*/
-
-/*let tasks: TaskInterface[] = [
-	task1,
-	task2,
+	{id:2,name:"Studying ES6"},
 	{id:3, name: "Kiss my girl",state: TaskState.Finish}
 ];
 
 let taskServiceObj = new TaskService(tasks);
+
+TaskService.showItemInfo();
+//console.log(TaskService.username);
+
 let a = taskServiceObj.getItems();
-console.log(a);*/
+console.log(a);
