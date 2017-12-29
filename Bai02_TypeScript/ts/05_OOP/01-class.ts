@@ -1,5 +1,6 @@
 // định nghĩa class
-class Task
+
+/*class Task
 {
 	id : number;
 	name : string;
@@ -20,3 +21,4 @@ class Task
 let taskObj1 = new Task(69,"Coding","created");
 taskObj1.showTaskInfo();
 console.log(taskObj1);
+*/
