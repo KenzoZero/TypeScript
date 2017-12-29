@@ -9,7 +9,6 @@ function funcABC(x:number):string
 }
 
 funcABC("abc");*/
-
 function funcABC(x : string):number;
 function funcABC(x : number):number;
 function funcABC(x : boolean):boolean;
@@ -37,6 +36,3 @@ console.log(checkFunc1);
 
 let checkFunc2 = funcABC(false);
 console.log(checkFunc2);
-
-
-

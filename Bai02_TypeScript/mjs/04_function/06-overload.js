@@ -1,14 +1,3 @@
-/*function funcABC(x:string):number
-{
-    return 100;
-}
-
-function funcABC(x:number):string
-{
-    return "abc";
-}
-
-funcABC("abc");*/
 function funcABC(x) {
     // Nếu x thuộc về kiểu string => dùng typeof x == "string" (dùng instanceof). Nếu x thuộc kiểu number dùng typeof x == "number"
     if (typeof x == "string") {

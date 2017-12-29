@@ -17,4 +17,3 @@ console.log(f4(5));
 // Sử dụng arrow funciton : không có kiểu trả về và không có lệnh return
 let f5 = (i : number) => i*i
 console.log(f5(6));
-
