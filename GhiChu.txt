@@ -27,3 +27,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 ==========OOP============= :
 *= Ý nghĩa từ khóa static: lấy ra giá trị mà ko cần khai báo đối tượng
+
+*= Access modifiers: sử dụng của các từ khóa private, public , protected=> Nếu mặc định không đưa thì giá trị sẽ là public
