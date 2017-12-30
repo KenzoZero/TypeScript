@@ -32,5 +32,7 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 
 *= Khái niệm Accessors : Thuộc tính phải có _ ở phía trc biến. Muốn truy cập bên ngoài dưới dạng tên đốitượng.thuoctinh phải tiến hành định nghĩa getter cho thuộc tính đó. và set lại giá trị thì phải dùng setter.
 
- *= Abstract: 
-	Abstarct method: sẽ không có bất kỳ khai báo nào bên trong thân hàm=> khi xuống lớp extends bắt buộc phải viết rõ hành động cho phương thức
+*= Abstract: 
+	Abstarct method: sẽ không có bất kỳ khai báo nào bên trong thân hàm=> khi xuống lớp extends bắt buộc phải viết rõ hành động cho
+	phương thức
+*= Interface: khi tao 1 class nào đó mà những class đó phải tuân thủ theo 1 quy tắt nào đó thì phải tạo ra =>interface

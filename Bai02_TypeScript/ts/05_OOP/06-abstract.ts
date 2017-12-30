@@ -30,5 +30,5 @@ class LapTopDell extends Laptop
 
 let laptopObj : Laptop = new LapTopDell();
 laptopObj.keyboard();
-laptopObj.mainboard();
+laptopObj.mainboard("abc");
 laptopObj.chipset();
