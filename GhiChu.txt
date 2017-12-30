@@ -29,3 +29,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 *= Ý nghĩa từ khóa static: lấy ra giá trị mà ko cần khai báo đối tượng
 
 *= Access modifiers: sử dụng của các từ khóa private, public , protected=> Nếu mặc định không đưa thì giá trị sẽ là public
+
+*= Khái niệm Accessors : Thuộc tính phải có _ ở phía trc biến. Muốn truy cập bên ngoài dưới dạng tên đốitượng.thuoctinh phải tiến hành định nghĩa getter cho thuộc tính đó. và set lại giá trị thì phải dùng setter. 

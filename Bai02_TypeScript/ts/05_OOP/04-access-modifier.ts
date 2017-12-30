@@ -37,8 +37,6 @@ let courseMobileObj = new CourseMobile("C112","f",60,"John");
 console.log(courseObj.id);
 courseMobileObj.checkPro();
 
-
-
 /*						Outside		Insite			Child Class
 	public 		:  			+			+				+
 	private		: 			-			+				-
