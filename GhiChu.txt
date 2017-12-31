@@ -6,7 +6,7 @@
 
 *= Kiểu dữ liệu Any: Đối với kiểu dữ liệu Any thì ta có thể khai báo 1 biến kiểu dữ liệu này nếu như chúng ta chưa xác định được biển này
 thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không gán giá trị khác được nhưng enum thì lại được
-
+git checkout -f
 *= Kiểu void : thường sử dựng trong việc quyết định kiểu trả về của 1 function nào đó
 
 *= Type assertions: Giúp cho chúng ta chuyển đổi qua lại các kiểu dữ liệu với nhau.
