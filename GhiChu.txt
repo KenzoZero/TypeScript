@@ -38,3 +38,6 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 *= Interface: khi tao 1 class nào đó mà những class đó phải tuân thủ theo 1 quy tắt nào đó thì phải tạo ra =>interface
 
 *= Generic: Tìm hiểu thêm trên trang chủ TypeScript
+
+========== Module & Namepace:============= :Tlieu: http://www.typescriptlang.org/docs/handbook/modules.html
+Export: Trong mã nguồn có quá nhiều mã nguồn=> phân thành nhiều tập tinh riêng biệt.
