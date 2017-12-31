@@ -15,4 +15,3 @@ StudyGeneric.printArray<string>(["a","bc","def"]);
 
 // params truyền vào phải là 1 array chứa các any.
 StudyGeneric.printArray<any>([1,2,3,5,"a",true]);
-

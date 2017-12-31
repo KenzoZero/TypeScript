@@ -36,3 +36,5 @@ thuộc kiểu dữ liệu gì.=> Nêu như kiểu number thì sao này không g
 	Abstarct method: sẽ không có bất kỳ khai báo nào bên trong thân hàm=> khi xuống lớp extends bắt buộc phải viết rõ hành động cho
 	phương thức
 *= Interface: khi tao 1 class nào đó mà những class đó phải tuân thủ theo 1 quy tắt nào đó thì phải tạo ra =>interface
+
+*= Generic: Tìm hiểu thêm trên trang chủ TypeScript
