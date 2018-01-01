@@ -1,9 +1,13 @@
-/// <reference path="Validation.ts" />
-/// <reference path="LettersOnlyValidator.ts" />
-/// <reference path="ZipCodeValidator.ts" />
+/// 
+/*<reference path="Validation.ts" />*/
+/// 
+/*<reference path="LettersOnlyValidator.ts" />*/
+/// 
+/*<reference path="ZipCodeValidator.ts" />*/
 
 // Some samples to try
-let strings = ["Hello", "98052", "101"];
+
+/*let strings = ["Hello", "98052", "101"];
 
 // Validators to use
 let validators: { [s: string]: Validation.StringValidator; } = {};
@@ -15,4 +19,4 @@ for (let s of strings) {
     for (let name in validators) {
         console.log("ABC");
     }
-}
+}*/

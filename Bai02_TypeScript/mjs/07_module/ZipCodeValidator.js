@@ -1,11 +1,10 @@
-/// <reference path="Validation.ts" />
-var Validation;
-(function (Validation) {
+///
+/* <reference path="Validation.ts" />*/
+/*namespace Validation {
     const numberRegexp = /^[0-9]+$/;
-    class ZipCodeValidator {
-        isAcceptable(s) {
+    export class ZipCodeValidator implements StringValidator {
+        isAcceptable(s: string) {
             return s.length === 5 && numberRegexp.test(s);
         }
     }
-    Validation.ZipCodeValidator = ZipCodeValidator;
-})(Validation || (Validation = {}));
+}*/ 

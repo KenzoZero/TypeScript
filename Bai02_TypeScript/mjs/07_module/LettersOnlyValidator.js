@@ -1,11 +1,10 @@
-/// <reference path="Validation.ts" />
-var Validation;
-(function (Validation) {
+/// 
+/*<reference path="Validation.ts" />*/
+/*namespace Validation {
     const lettersRegexp = /^[A-Za-z]+$/;
-    class LettersOnlyValidator {
-        isAcceptable(s) {
+    export class LettersOnlyValidator implements StringValidator {
+        isAcceptable(s: string) {
             return lettersRegexp.test(s);
         }
     }
-    Validation.LettersOnlyValidator = LettersOnlyValidator;
-})(Validation || (Validation = {}));
+}*/ 
