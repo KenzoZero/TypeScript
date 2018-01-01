@@ -43,3 +43,4 @@ git checkout -f
 Export: Trong mã nguồn có quá nhiều mã nguồn=> phân thành nhiều tập tinh riêng biệt.
 Internal modules: sử dụng namespace và các mã lệnh bố trí trong cùng 1 tập tin.
 External modules: Bố trí thành nhiều tâp tin và không sử dụng từ khóa namespace nữa
+_ So sánh sự giống và khác nhau giữa các modules.(CommonJS, AMD, UMD,...)
