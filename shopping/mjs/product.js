@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Product {
     get id() {
         return this._id;
@@ -36,3 +38,4 @@ class Product {
         this._canBuy = v;
     }
 }
+exports.Product = Product;

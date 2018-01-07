@@ -1,4 +1,4 @@
-class Product 
+export class Product 
 {
 	private _id: number;
 	private _name:string;
@@ -54,5 +54,4 @@ class Product
 	public set canBuy(v : boolean) {
 		this._canBuy = v;
 	}
-	//canBuy
 }
