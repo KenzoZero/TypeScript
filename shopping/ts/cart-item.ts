@@ -1,6 +1,6 @@
 import { Product } from "./product";
 
-class CardItem
+export class CartItem
 {
 	// Card item tương ứng vs sản phẩm nào
 	private product:Product;

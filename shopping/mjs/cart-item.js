@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class CardItem {
+class CartItem {
     constructor(product, quantity = 1) {
     }
     showCardItemHTML() {
@@ -10,3 +10,4 @@ class CardItem {
         return 123;
     }
 }
+exports.CartItem = CartItem;
