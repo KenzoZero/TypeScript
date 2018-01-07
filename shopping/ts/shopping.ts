@@ -1,4 +1,6 @@
 import { ProductRepository } from "./product-repository";
+import { Product } from "./product";
 
 let productRepository = new ProductRepository();
-productRepository.getItems();
+let products : Product[] = productRepository.getItems();
+console.log(products);
