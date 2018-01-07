@@ -20,7 +20,23 @@ class ProductRepository {
         return this.products;
     }
     getItemById(id) {
-        return new product_1.Product(100, "bulbasaur", "bulbasaur.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 20);
+        // Cách 1 : Lấy Id bằng vòng lặp for
+        let total = this.products.length;
+        for (let i = 0; i < total; i++) {
+            if (this.products[i].id == id) {
+                return this.products[i];
+            }
+        }
+        return null;
+        // Cách 2 : Duyệt qua các phần tử trong array Product dùng Arrow function
+        /*let filter : Product[] = this.products.filter(
+            product => product.id == id;
+        );
+        if(filter.length > 0)
+        {
+            return filter[0];
+        }
+        return null;*/
     }
     showItemInHTML() {
         return "ABC";
