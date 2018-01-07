@@ -7,6 +7,16 @@ export class Product
 	private _price:number;
 	private _canBuy:boolean;
 
+	constructor(id: number, name:string,image:string,summary:string,price:number,canBuy:boolean = true)
+	{
+		this._id = id;
+		this._name = name;
+		this._image = image;
+		this._summary= summary;
+		this._price = price;
+		this._canBuy = canBuy;
+	}
+
 	public get id() : number {
 		return this._id;
 	}

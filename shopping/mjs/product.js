@@ -1,6 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Product {
+    constructor(id, name, image, summary, price, canBuy = true) {
+        this._id = id;
+        this._name = name;
+        this._image = image;
+        this._summary = summary;
+        this._price = price;
+        this._canBuy = canBuy;
+    }
     get id() {
         return this._id;
     }
