@@ -5,5 +5,7 @@ let productRepository = new ProductRepository();
 let products : Product[] = productRepository.getItems();
 //console.log(products);
 
-let product102: Product = productRepository.getItemById(104);
-console.log(product102);
+/*let product102: Product = productRepository.getItemById(104);
+console.log(product102);*/
+
+console.log(productRepository.showItemInHTML());

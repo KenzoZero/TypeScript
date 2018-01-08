@@ -39,7 +39,38 @@ class ProductRepository {
         return null;*/
     }
     showItemInHTML() {
-        return "ABC";
+        let total = this.products.length;
+        let xhtmlResult = "";
+        // Kiểm tra xem kho hàn có sản phẩm hay không
+        if (total > 0) {
+            for (let i = 0; i < total; i++) {
+                let curentItem = this.products[i];
+                console.log(curentItem);
+                let image = curentItem.image;
+                let name = curentItem.name;
+                let summary = curentItem.summary;
+                let price = curentItem.price;
+                xhtmlResult += `<div class="media product">
+									<div class="media-left">
+										<a href="#">
+	                                        <img class="media-object" src="img/characters/${image}" alt="${name}">
+	                                    </a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">${name}</h4>
+										<p>
+											${summary}
+										</p>
+										<input type="number" name="quantity-product-100" value="1" min="1">
+										<a data-product="100" href="#" class="price">$ ${price}</a>
+									</div>
+								</div>`;
+            }
+        }
+        else {
+            xhtmlResult = "Empty product in my shop";
+        }
+        return xhtmlResult;
     }
 }
 exports.ProductRepository = ProductRepository;

@@ -29,8 +29,8 @@ export class ProductRepository
 	public getItemById(id:number) : Product
 	{
 		// Cách 1 : Lấy Id bằng vòng lặp for
-		let total = this.products.length;
-		for(let i = 0; i < total ; i++)
+		let total  : number = this.products.length;
+		for(let i : number = 0; i < total ; i++)
 		{
 			if(this.products[i].id == id)
 			{
@@ -52,6 +52,41 @@ export class ProductRepository
 
 	public showItemInHTML() : string
 	{
-		return "ABC";
+		let total : number = this.products.length;
+		let xhtmlResult: string = "";
+
+		// Kiểm tra xem kho hàn có sản phẩm hay không
+		if(total > 0)
+		{
+			for(let i : number = 0; i < total ; i++)
+			{
+				let curentItem: Product = this.products[i];
+				console.log(curentItem);
+				let image: string = curentItem.image;
+				let name: string = curentItem.name;
+				let summary: string = curentItem.summary;
+				let price: number = curentItem.price;
+				xhtmlResult += `<div class="media product">
+									<div class="media-left">
+										<a href="#">
+	                                        <img class="media-object" src="img/characters/${image}" alt="${name}">
+	                                    </a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">${name}</h4>
+										<p>
+											${summary}
+										</p>
+										<input type="number" name="quantity-product-100" value="1" min="1">
+										<a data-product="100" href="#" class="price">$ ${price}</a>
+									</div>
+								</div>`;
+			}
+		}
+		else
+		{
+			xhtmlResult = "Empty product in my shop";
+		}
+		return xhtmlResult;
 	}
 }
