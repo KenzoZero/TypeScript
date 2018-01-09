@@ -1,3 +1,4 @@
+/// <reference path="./libs/index.d.ts" />
 import { ProductRepository } from "./product-repository";
 import { Product } from "./product";
 
@@ -9,3 +10,5 @@ let products : Product[] = productRepository.getItems();
 console.log(product102);*/
 
 console.log(productRepository.showItemInHTML());
+
+$("#list-product").html(productRepository.showItemInHTML());

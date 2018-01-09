@@ -5,7 +5,7 @@ class ProductRepository {
     constructor() {
         this.products = []; // tập hợp sản phẩm
         // Đặt danh sách các sản phẩm.
-        this.addItem(new product_1.Product(100, "bulbasaur", "bulbasaur.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 21));
+        this.addItem(new product_1.Product(100, "bulbasaur", "bulbasaur.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 2100));
         this.addItem(new product_1.Product(101, "charmander", "charmander.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 18));
         this.addItem(new product_1.Product(102, "ivysaur", "ivysaur.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 22));
         this.addItem(new product_1.Product(103, "squirtle", "squirtle.png", "bulbasaurLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis laoreet orci quis mollis", 65, false));
