@@ -8,7 +8,4 @@ let products : Product[] = productRepository.getItems();
 
 /*let product102: Product = productRepository.getItemById(104);
 console.log(product102);*/
-
-console.log(productRepository.showItemInHTML());
-
 $("#list-product").html(productRepository.showItemInHTML());

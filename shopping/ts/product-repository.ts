@@ -61,7 +61,6 @@ export class ProductRepository
 			for(let i : number = 0; i < total ; i++)
 			{
 				let curentItem: Product = this.products[i];
-				console.log(curentItem);
 				let image: string = curentItem.image;
 				let name: string = curentItem.name;
 				let summary: string = curentItem.summary;
@@ -77,8 +76,7 @@ export class ProductRepository
 										<p>
 											${summary}
 										</p>
-										<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">$ ${price}</a>
+										${ this.showBuyItemInHTML(curentItem)}
 									</div>
 								</div>`;
 			}
@@ -86,6 +84,23 @@ export class ProductRepository
 		else
 		{
 			xhtmlResult = "Empty product in my shop";
+		}
+		return xhtmlResult;
+	}
+
+	private showBuyItemInHTML(product:Product) : string
+	{
+		let xhtmlResult: string = "";
+		let price: number =  product.price;
+		let canBuy: boolean = product.canBuy;
+		if(canBuy == true)
+		{
+			xhtmlResult =  `<input type="number" name="quantity-product-100" value="1" min="1">
+										<a data-product="100" href="#" class="price">$ ${price}</a>`
+		}
+		else
+		{
+			xhtmlResult = `<span class="price">$ ${price}</span>`;
 		}
 		return xhtmlResult;
 	}

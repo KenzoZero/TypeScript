@@ -45,7 +45,6 @@ class ProductRepository {
         if (total > 0) {
             for (let i = 0; i < total; i++) {
                 let curentItem = this.products[i];
-                console.log(curentItem);
                 let image = curentItem.image;
                 let name = curentItem.name;
                 let summary = curentItem.summary;
@@ -61,14 +60,26 @@ class ProductRepository {
 										<p>
 											${summary}
 										</p>
-										<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">$ ${price}</a>
+										${this.showBuyItemInHTML(curentItem)}
 									</div>
 								</div>`;
             }
         }
         else {
             xhtmlResult = "Empty product in my shop";
+        }
+        return xhtmlResult;
+    }
+    showBuyItemInHTML(product) {
+        let xhtmlResult = "";
+        let price = product.price;
+        let canBuy = product.canBuy;
+        if (canBuy == true) {
+            xhtmlResult = `<input type="number" name="quantity-product-100" value="1" min="1">
+										<a data-product="100" href="#" class="price">$ ${price}</a>`;
+        }
+        else {
+            xhtmlResult = `<span class="price">$ ${price}</span>`;
         }
         return xhtmlResult;
     }
