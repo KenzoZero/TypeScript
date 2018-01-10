@@ -1,4 +1,5 @@
 import { Product } from "./product";
+import { Helpers } from "./libs/helpers";
 
 export class ProductRepository 
 {
@@ -91,16 +92,16 @@ export class ProductRepository
 	private showBuyItemInHTML(product:Product) : string
 	{
 		let xhtmlResult: string = "";
-		let price: number =  product.price;
+		let price : string =  Helpers.toCurrency(product.price,"VND");
 		let canBuy: boolean = product.canBuy;
 		if(canBuy == true)
 		{
 			xhtmlResult =  `<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">$ ${price}</a>`
+										<a data-product="100" href="#" class="price">${price}</a>`
 		}
 		else
 		{
-			xhtmlResult = `<span class="price">$ ${price}</span>`;
+			xhtmlResult = `<span class="price"> ${price}</span>`;
 		}
 		return xhtmlResult;
 	}

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const product_1 = require("./product");
+const helpers_1 = require("./libs/helpers");
 class ProductRepository {
     constructor() {
         this.products = []; // tập hợp sản phẩm
@@ -72,14 +73,14 @@ class ProductRepository {
     }
     showBuyItemInHTML(product) {
         let xhtmlResult = "";
-        let price = product.price;
+        let price = helpers_1.Helpers.toCurrency(product.price, "VND");
         let canBuy = product.canBuy;
         if (canBuy == true) {
             xhtmlResult = `<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">$ ${price}</a>`;
+										<a data-product="100" href="#" class="price">${price}</a>`;
         }
         else {
-            xhtmlResult = `<span class="price">$ ${price}</span>`;
+            xhtmlResult = `<span class="price"> ${price}</span>`;
         }
         return xhtmlResult;
     }
