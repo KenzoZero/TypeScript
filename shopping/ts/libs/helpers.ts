@@ -11,6 +11,5 @@ export class Helpers
 		else if (position == "right") {
 			return value +" "+ currencyUnit;
 		}
-		
 	}
 }
