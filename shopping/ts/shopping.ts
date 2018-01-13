@@ -48,4 +48,9 @@ $(document).ready(function(){
 	// Update thông báo
 	showNotification("Ready to buy product");
 
+	$("a.price").click(function(){
+		let id:number = $(this).data("product");
+		let quantity: number = Number($("input[name = 'quantity-product-"+id+"']").val());
+		console.log(id + " - " + quantity);
+	});
 })

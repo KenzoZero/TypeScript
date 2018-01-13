@@ -73,11 +73,11 @@ class ProductRepository {
     }
     showBuyItemInHTML(product) {
         let xhtmlResult = "";
-        let price = helpers_1.Helpers.toCurrency(product.price, "VND");
+        let price = helpers_1.Helpers.toCurrency(product.price, "VND", "right");
         let canBuy = product.canBuy;
         if (canBuy == true) {
-            xhtmlResult = `<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">${price}</a>`;
+            xhtmlResult = `<input type="number" name="quantity-product-${product.id}" value="1" min="1">
+										<a data-product="${product.id}" href="#" class="price">${price}</a>`;
         }
         else {
             xhtmlResult = `<span class="price"> ${price}</span>`;

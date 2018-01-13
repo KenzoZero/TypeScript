@@ -92,12 +92,12 @@ export class ProductRepository
 	private showBuyItemInHTML(product:Product) : string
 	{
 		let xhtmlResult: string = "";
-		let price : string =  Helpers.toCurrency(product.price,"VND");
+		let price : string =  Helpers.toCurrency(product.price,"VND","right");
 		let canBuy: boolean = product.canBuy;
 		if(canBuy == true)
 		{
-			xhtmlResult =  `<input type="number" name="quantity-product-100" value="1" min="1">
-										<a data-product="100" href="#" class="price">${price}</a>`
+			xhtmlResult =  `<input type="number" name="quantity-product-${ product.id }" value="1" min="1">
+										<a data-product="${ product.id }" href="#" class="price">${price}</a>`
 		}
 		else
 		{

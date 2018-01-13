@@ -35,4 +35,9 @@ $(document).ready(function () {
     showCart();
     // Update thông báo
     showNotification("Ready to buy product");
+    $("a.price").click(function () {
+        let id = $(this).data("product");
+        let quantity = Number($("input[name = 'quantity-product-" + id + "']").val());
+        console.log(id + " - " + quantity);
+    });
 });
