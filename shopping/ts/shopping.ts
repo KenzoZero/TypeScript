@@ -1,6 +1,8 @@
 /// <reference path="./libs/index.d.ts" />
 import { ProductRepository } from "./product-repository";
 import { Product } from "./product";
+import { Validate } from "./libs/validate";
+
 
 // Định nghĩa thành 1 hằng số,
 namespace MDefine
@@ -37,6 +39,15 @@ function showCart()
 	$(MDefine.ELM_CART_FOOTER).html("");
 }
 
+function checkQuantity(value :any):boolean
+{
+	if(value < 1 || Validate.isNumber(value) == false)
+	{
+		showNotification("Quantity must equal or greater 1 and is Number");
+		return false;
+	}
+	return true;
+}
 // Cần đợi cho tất cả dữ liệu troong html load xong mới thực hiện 
 $(document).ready(function(){
 	// Hiển thị danh sách các sản phẩm
@@ -50,7 +61,14 @@ $(document).ready(function(){
 
 	$("a.price").click(function(){
 		let id:number = $(this).data("product");
+		parseInt
 		let quantity: number = Number($("input[name = 'quantity-product-"+id+"']").val());
-		console.log(id + " - " + quantity);
+		
+		if(checkQuantity(quantity))
+		{
+			//Add product
+			console.log(id + " - " + quantity);
+		}
+		
 	});
 })

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path="./libs/index.d.ts" />
 const product_repository_1 = require("./product-repository");
+const validate_1 = require("./libs/validate");
 // Định nghĩa thành 1 hằng số,
 var MDefine;
 (function (MDefine) {
@@ -27,6 +28,13 @@ function showCart() {
     $(MDefine.ELM_CART_BODY).html("");
     $(MDefine.ELM_CART_FOOTER).html("");
 }
+function checkQuantity(value) {
+    if (value < 1 || validate_1.Validate.isNumber(value) == false) {
+        showNotification("Quantity must equal or greater 1 and is Number");
+        return false;
+    }
+    return true;
+}
 // Cần đợi cho tất cả dữ liệu troong html load xong mới thực hiện 
 $(document).ready(function () {
     // Hiển thị danh sách các sản phẩm
@@ -37,7 +45,11 @@ $(document).ready(function () {
     showNotification("Ready to buy product");
     $("a.price").click(function () {
         let id = $(this).data("product");
+        parseInt;
         let quantity = Number($("input[name = 'quantity-product-" + id + "']").val());
-        console.log(id + " - " + quantity);
+        if (checkQuantity(quantity)) {
+            //Add product
+            console.log(id + " - " + quantity);
+        }
     });
 });
