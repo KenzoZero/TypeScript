@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path="./libs/index.d.ts" />
 const product_repository_1 = require("./product-repository");
+const cart_1 = require("./cart");
 const validate_1 = require("./libs/validate");
 // Định nghĩa thành 1 hằng số,
 var MDefine;
@@ -11,8 +12,10 @@ var MDefine;
     MDefine.ELM_CART_BODY = "#my-cart-body";
     MDefine.ELM_CART_FOOTER = "#my-cart-footer";
 })(MDefine || (MDefine = {}));
+// Tạo đối tượng
 let productRepository = new product_repository_1.ProductRepository();
 let products = productRepository.getItems();
+let cartObj = new cart_1.Cart();
 //console.log(products);
 /*let product102: Product = productRepository.getItemById(104);
 console.log(product102);*/
@@ -28,13 +31,6 @@ function showCart() {
     $(MDefine.ELM_CART_BODY).html("");
     $(MDefine.ELM_CART_FOOTER).html("");
 }
-function checkQuantity(value) {
-    if (value < 1 || validate_1.Validate.isNumber(value) == false) {
-        showNotification("Quantity must equal or greater 1 and is Number");
-        return false;
-    }
-    return true;
-}
 // Cần đợi cho tất cả dữ liệu troong html load xong mới thực hiện 
 $(document).ready(function () {
     // Hiển thị danh sách các sản phẩm
@@ -47,9 +43,13 @@ $(document).ready(function () {
         let id = $(this).data("product");
         parseInt;
         let quantity = Number($("input[name = 'quantity-product-" + id + "']").val());
-        if (checkQuantity(quantity)) {
-            //Add product
-            console.log(id + " - " + quantity);
+        if (validate_1.Validate.checkQuantity(quantity)) {
+            // Lấy sản phẩm bằng id
+            let product = productRepository.getItemById(id);
+            cartObj.addProduct(product, quantity);
+        }
+        else {
+            showNotification("Quantity must equal or greater 1 and is Number");
         }
     });
 });

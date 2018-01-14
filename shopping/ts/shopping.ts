@@ -1,6 +1,7 @@
 /// <reference path="./libs/index.d.ts" />
 import { ProductRepository } from "./product-repository";
 import { Product } from "./product";
+import { Cart } from "./cart";
 import { Validate } from "./libs/validate";
 
 
@@ -13,8 +14,10 @@ namespace MDefine
 	export const ELM_CART_FOOTER : string = "#my-cart-footer";
 
 }
+// Tạo đối tượng
 let productRepository = new ProductRepository();
 let products : Product[] = productRepository.getItems();
+let cartObj = new Cart();
 
 //console.log(products);
 
@@ -39,15 +42,7 @@ function showCart()
 	$(MDefine.ELM_CART_FOOTER).html("");
 }
 
-function checkQuantity(value :any):boolean
-{
-	if(value < 1 || Validate.isNumber(value) == false)
-	{
-		showNotification("Quantity must equal or greater 1 and is Number");
-		return false;
-	}
-	return true;
-}
+
 // Cần đợi cho tất cả dữ liệu troong html load xong mới thực hiện 
 $(document).ready(function(){
 	// Hiển thị danh sách các sản phẩm
@@ -64,11 +59,15 @@ $(document).ready(function(){
 		parseInt
 		let quantity: number = Number($("input[name = 'quantity-product-"+id+"']").val());
 		
-		if(checkQuantity(quantity))
+		if(Validate.checkQuantity(quantity))
 		{
-			//Add product
-			console.log(id + " - " + quantity);
+			// Lấy sản phẩm bằng id
+			let product:Product = productRepository.getItemById(id);
+			cartObj.addProduct(product,quantity);
 		}
-		
+		else
+		{
+			showNotification("Quantity must equal or greater 1 and is Number");
+		}
 	});
 })

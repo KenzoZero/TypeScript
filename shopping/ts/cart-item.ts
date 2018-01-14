@@ -9,7 +9,8 @@ export class CartItem
 
 	constructor(product:Product, quantity: number = 1)
 	{
-
+		this.product = product;
+		this.quantity = quantity;
 	}
 
 	public showCardItemHTML() :string
