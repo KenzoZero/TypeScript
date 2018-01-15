@@ -6,7 +6,7 @@ export class Cart
 	private cartItems: CartItem[] = []
 
 	// Phương thức them sản phẩm
-	addProduct(product: Product, quantity:number = 1):void{
+	public addProduct(product: Product, quantity:number = 1):void{
 		// tạo 1 đối tượng cartItem mới 
 		let cartItem = new CartItem(product,quantity);
 
@@ -16,7 +16,21 @@ export class Cart
 		console.log(this.cartItems);
 	}
 
-	updateProduct(product: Product, quantity:number = 1):void{
+	// Phương thức dùng để kiểm tra sản phẩm đã tồn tại trong giỏ hàng hay chưa ?
+	// => Nhận 1 sản và xem sản phẩm chỉ số bao nhiêu trong mảng cartItems
+	private checkProductExitst(product: Product):boolean{
+		let total = this.cartItems.length;
+		for(let i: number = 0; i < total ; i++)
+		{
+			if(this.cartItems[i].getProduct().id == product.id)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
+	public updateProduct(product: Product, quantity:number = 1):void{
 
 	}
 

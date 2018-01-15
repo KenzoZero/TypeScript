@@ -13,6 +13,17 @@ class Cart {
         this.cartItems[this.cartItems.length] = cartItem;
         console.log(this.cartItems);
     }
+    // Phương thức dùng để kiểm tra sản phẩm đã tồn tại trong giỏ hàng hay chưa ?
+    // => Nhận 1 sản và xem sản phẩm chỉ số bao nhiêu trong mảng cartItems
+    checkProductExitst(product) {
+        let total = this.cartItems.length;
+        for (let i = 0; i < total; i++) {
+            if (this.cartItems[i].getProduct().id == product.id) {
+                return true;
+            }
+            return false;
+        }
+    }
     updateProduct(product, quantity = 1) {
     }
     removeProduct(product) {

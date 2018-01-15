@@ -22,4 +22,8 @@ export class CartItem
 	{
 		return 123;
 	}
+
+	public get getProduct() : Product {
+		return this.product
+	}
 }

@@ -11,5 +11,8 @@ class CartItem {
     getSubTotal() {
         return 123;
     }
+    get getProduct() {
+        return this.product;
+    }
 }
 exports.CartItem = CartItem;
