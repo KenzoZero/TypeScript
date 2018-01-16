@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class CartItem {
     constructor(product, quantity = 1) {
-        this.product = product;
-        this.quantity = quantity;
+        this._product = product;
+        this._quantity = quantity;
     }
     showCardItemHTML() {
         return "123";
@@ -11,8 +11,17 @@ class CartItem {
     getSubTotal() {
         return 123;
     }
-    get getProduct() {
-        return this.product;
+    get product() {
+        return this._product;
+    }
+    set product(v) {
+        this._product = v;
+    }
+    get quantity() {
+        return this._quantity;
+    }
+    set quantity(v) {
+        this._quantity = v;
     }
 }
 exports.CartItem = CartItem;

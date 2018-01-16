@@ -3,14 +3,14 @@ import { Product } from "./product";
 export class CartItem
 {
 	// Card item tương ứng vs sản phẩm nào
-	private product:Product;
+	private _product:Product;
 	// số lượng sản phẩm 
-	private quantity: number;
+	private _quantity: number;
 
 	constructor(product:Product, quantity: number = 1)
 	{
-		this.product = product;
-		this.quantity = quantity;
+		this._product = product;
+		this._quantity = quantity;
 	}
 
 	public showCardItemHTML() :string
@@ -23,7 +23,19 @@ export class CartItem
 		return 123;
 	}
 
-	public get getProduct() : Product {
-		return this.product
+	public get product() : Product {
+		return this._product;
+	}
+
+	public set product(v : Product) {
+		this._product = v;
+	}
+
+	public get quantity() : number {
+		return this._quantity;
+	}
+
+	public set quantity(v : number) {
+		this._quantity = v;
 	}
 }
