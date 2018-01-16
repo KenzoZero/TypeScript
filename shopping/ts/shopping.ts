@@ -5,15 +5,24 @@ import { Cart } from "./cart";
 import { Validate } from "./libs/validate";
 
 
-// Định nghĩa thành 1 hằng số,
-namespace MDefine
+// Định nghĩa thành 1 hằng số, 
+// Định nghĩa Element
+namespace MElement
 {
 	export const ELM_LIST_PRODUCT : string = "#list-product";
 	export const ELM_NOTIFICATION : string = "#mnotification";
 	export const ELM_CART_BODY : string = "#my-cart-body";
 	export const ELM_CART_FOOTER : string = "#my-cart-footer";
+}
+
+// Định nghĩa những thông báo
+namespace MNotification
+{
+	export const NOTI_READY_TO_BUY : string = "Ready to buy product";
+	export const NOTI_GREATE_THAN_ONE = "Quantity must equal or greater 1 and is Number";
 
 }
+
 // Tạo đối tượng
 let productRepository = new ProductRepository();
 let products : Product[] = productRepository.getItems();
@@ -27,19 +36,24 @@ console.log(product102);*/
 // Hàm hiển thị danh sách sản phẩm.
 function showListProduct()
 {
-	$(MDefine.ELM_LIST_PRODUCT).html(productRepository.showItemInHTML());
+	$(MElement.ELM_LIST_PRODUCT).html(productRepository.showItemInHTML());
 }
 
 // Hàm update sản phẩm
 function showNotification(str:string) : void
 {
-	$(MDefine.ELM_NOTIFICATION).html(str);
+	$(MElement.ELM_NOTIFICATION).html(str);
 }
 
+// Hiển thị giỏ hàng
 function showCart()
 {
-	$(MDefine.ELM_CART_BODY).html("");
-	$(MDefine.ELM_CART_FOOTER).html("");
+	// hiển thị các sán phẩm có trong giỏ hàng
+	$(MElement.ELM_CART_BODY).html(cartObj.showCartBodyInHTML());
+
+	// Hiển thi số lượng và giá tiền của sản phẩm trong giỏ hàng
+	$(MElement.ELM_CART_FOOTER).html("");
+
 }
 
 
@@ -52,7 +66,7 @@ $(document).ready(function(){
 	showCart();
 
 	// Update thông báo
-	showNotification("Ready to buy product");
+	showNotification(MNotification.NOTI_READY_TO_BUY);
 
 	$("a.price").click(function(){
 		let id:number = $(this).data("product");
@@ -67,7 +81,7 @@ $(document).ready(function(){
 		}
 		else
 		{
-			showNotification("Quantity must equal or greater 1 and is Number");
+			showNotification(MNotification.NOTI_GREATE_THAN_ONE);
 		}
 	});
 })

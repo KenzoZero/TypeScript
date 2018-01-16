@@ -4,14 +4,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const product_repository_1 = require("./product-repository");
 const cart_1 = require("./cart");
 const validate_1 = require("./libs/validate");
-// Định nghĩa thành 1 hằng số,
-var MDefine;
-(function (MDefine) {
-    MDefine.ELM_LIST_PRODUCT = "#list-product";
-    MDefine.ELM_NOTIFICATION = "#mnotification";
-    MDefine.ELM_CART_BODY = "#my-cart-body";
-    MDefine.ELM_CART_FOOTER = "#my-cart-footer";
-})(MDefine || (MDefine = {}));
+// Định nghĩa thành 1 hằng số, 
+// Định nghĩa Element
+var MElement;
+(function (MElement) {
+    MElement.ELM_LIST_PRODUCT = "#list-product";
+    MElement.ELM_NOTIFICATION = "#mnotification";
+    MElement.ELM_CART_BODY = "#my-cart-body";
+    MElement.ELM_CART_FOOTER = "#my-cart-footer";
+})(MElement || (MElement = {}));
+// Định nghĩa những thông báo
+var MNotification;
+(function (MNotification) {
+    MNotification.NOTI_READY_TO_BUY = "Ready to buy product";
+    MNotification.NOTI_GREATE_THAN_ONE = "Quantity must equal or greater 1 and is Number";
+})(MNotification || (MNotification = {}));
 // Tạo đối tượng
 let productRepository = new product_repository_1.ProductRepository();
 let products = productRepository.getItems();
@@ -21,15 +28,18 @@ let cartObj = new cart_1.Cart();
 console.log(product102);*/
 // Hàm hiển thị danh sách sản phẩm.
 function showListProduct() {
-    $(MDefine.ELM_LIST_PRODUCT).html(productRepository.showItemInHTML());
+    $(MElement.ELM_LIST_PRODUCT).html(productRepository.showItemInHTML());
 }
 // Hàm update sản phẩm
 function showNotification(str) {
-    $(MDefine.ELM_NOTIFICATION).html(str);
+    $(MElement.ELM_NOTIFICATION).html(str);
 }
+// Hiển thị giỏ hàng
 function showCart() {
-    $(MDefine.ELM_CART_BODY).html("");
-    $(MDefine.ELM_CART_FOOTER).html("");
+    // hiển thị các sán phẩm có trong giỏ hàng
+    $(MElement.ELM_CART_BODY).html(cartObj.showCartBodyInHTML());
+    // Hiển thi số lượng và giá tiền của sản phẩm trong giỏ hàng
+    $(MElement.ELM_CART_FOOTER).html("");
 }
 // Cần đợi cho tất cả dữ liệu troong html load xong mới thực hiện 
 $(document).ready(function () {
@@ -38,7 +48,7 @@ $(document).ready(function () {
     // Giỏ hàng rỗng => 2 thẻ có id = my-cart-body , my-cart-footer là rỗng.
     showCart();
     // Update thông báo
-    showNotification("Ready to buy product");
+    showNotification(MNotification.NOTI_READY_TO_BUY);
     $("a.price").click(function () {
         let id = $(this).data("product");
         parseInt;
@@ -49,7 +59,7 @@ $(document).ready(function () {
             cartObj.addProduct(product, quantity);
         }
         else {
-            showNotification("Quantity must equal or greater 1 and is Number");
+            showNotification(MNotification.NOTI_GREATE_THAN_ONE);
         }
     });
 });

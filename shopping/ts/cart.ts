@@ -49,7 +49,9 @@ export class Cart
 
 	public isEmpty() : boolean
 	{
-		return true;
+		// Nếu mà bằng 0 thì true, và không bằng 0 thì false
+		return (this.cartItems.length == 0);
+		
 	}
 
 	public getTotalQuantity ():number
@@ -64,7 +66,22 @@ export class Cart
 
 	public showCartBodyInHTML () :string
 	{
-		return "123";
+		let xhtmlResult :string= "<tr><th colspan='6'>Empty product in your cart</th></tr>";
+		if (!this.isEmpty()) {
+			xhtmlResult = `<tr>
+					<th scope="row">1</th>
+					<td>bulbasaur</td>
+					<td>69 USD</td>
+					<td><input name="cart-item-quantity-100" type="number" value="1" min="1"></td>
+					<td><strong>69 USD</strong></td>
+					<td>
+						<a class="label label-info update-cart-item" href="#" data-product="100">Update</a>
+						<a class="label label-danger delete-cart-item" href="#" data-product="100">Delete</a>
+					</td>
+				</tr>`;
+		}
+
+		return xhtmlResult;
 	}
 
 	public showCartFooterInHTML () :string
