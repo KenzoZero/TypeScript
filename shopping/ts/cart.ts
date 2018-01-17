@@ -21,7 +21,6 @@ export class Cart
 			// Nếu chưa tồn tại thì thêm vô,
 			this.cartItems[this.cartItems.length] = cartItem;
 		}
-		console.log(this.cartItems);
 	}
 
 	// Phương thức dùng để kiểm tra sản phẩm đã tồn tại trong giỏ hàng hay chưa ?
@@ -51,7 +50,6 @@ export class Cart
 	{
 		// Nếu mà bằng 0 thì true, và không bằng 0 thì false
 		return (this.cartItems.length == 0);
-		
 	}
 
 	public getTotalQuantity ():number
@@ -67,7 +65,15 @@ export class Cart
 	public showCartBodyInHTML () :string
 	{
 		let xhtmlResult :string= "<tr><th colspan='6'>Empty product in your cart</th></tr>";
+		// Gọi giá trị hàm isEmpty đã check ở trên.
 		if (!this.isEmpty()) {
+			let total : number = this.cartItems.length;
+			for(let i : number = 0; i < total; i++)
+			{
+				let cartItemCurrent = this.cartItems[i];
+				console.log(cartItemCurrent);
+			}
+
 			xhtmlResult = `<tr>
 					<th scope="row">1</th>
 					<td>bulbasaur</td>

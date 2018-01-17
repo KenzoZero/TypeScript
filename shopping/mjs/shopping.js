@@ -57,6 +57,8 @@ $(document).ready(function () {
             // Lấy sản phẩm bằng id
             let product = productRepository.getItemById(id);
             cartObj.addProduct(product, quantity);
+            showCart();
+            // Sau khi mua thánh công cần cập nhật lại giỏ hàng
         }
         else {
             showNotification(MNotification.NOTI_GREATE_THAN_ONE);

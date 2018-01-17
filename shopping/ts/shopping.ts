@@ -53,7 +53,6 @@ function showCart()
 
 	// Hiển thi số lượng và giá tiền của sản phẩm trong giỏ hàng
 	$(MElement.ELM_CART_FOOTER).html("");
-
 }
 
 
@@ -78,6 +77,9 @@ $(document).ready(function(){
 			// Lấy sản phẩm bằng id
 			let product:Product = productRepository.getItemById(id);
 			cartObj.addProduct(product,quantity);
+			showCart();
+			// Sau khi mua thánh công cần cập nhật lại giỏ hàng
+
 		}
 		else
 		{
