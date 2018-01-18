@@ -46,26 +46,20 @@ class Cart {
     getTotalPrice() {
         return 20;
     }
+    // cartItem[0] :
+    // cartItem[1]
     showCartBodyInHTML() {
-        let xhtmlResult = "<tr><th colspan='6'>Empty product in your cart</th></tr>";
+        let xhtmlResult = "";
         // Gọi giá trị hàm isEmpty đã check ở trên.
         if (!this.isEmpty()) {
             let total = this.cartItems.length;
             for (let i = 0; i < total; i++) {
                 let cartItemCurrent = this.cartItems[i];
-                console.log(cartItemCurrent);
+                xhtmlResult += cartItemCurrent.showCardItemHTML(Number(i + 1));
             }
-            xhtmlResult = `<tr>
-					<th scope="row">1</th>
-					<td>bulbasaur</td>
-					<td>69 USD</td>
-					<td><input name="cart-item-quantity-100" type="number" value="1" min="1"></td>
-					<td><strong>69 USD</strong></td>
-					<td>
-						<a class="label label-info update-cart-item" href="#" data-product="100">Update</a>
-						<a class="label label-danger delete-cart-item" href="#" data-product="100">Delete</a>
-					</td>
-				</tr>`;
+        }
+        else {
+            xhtmlResult += `<tr><th colspan='6'>Empty product in your cart</th></tr>`;
         }
         return xhtmlResult;
     }
