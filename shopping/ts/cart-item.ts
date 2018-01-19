@@ -17,7 +17,6 @@ export class CartItem
 	public showCardItemHTML(index : number) :string
 	{
 		// Đối tượng this cũng là 1 cartItem có 2 phần tử: _product và _quantity
-		console.log(this);
 		let name:string = this.product.name;
 		let price : string =  Helpers.toCurrency(this.product.price,"VND","right");
 		let quantity : number = this.quantity;

@@ -1,6 +1,6 @@
 import { CartItem } from "./cart-item";
 import { Product } from "./product";
-
+import { Helpers } from "./libs/helpers";
 export class Cart 
 {
 	private cartItems: CartItem[] = []
@@ -54,12 +54,21 @@ export class Cart
 
 	public getTotalQuantity ():number
 	{
-		return 10;
+		// Gần vòng lặp theo cách mới => dùng foreach và arrow function
+		let total:number = 0;
+		this.cartItems.forEach((cartItem : CartItem ) => {
+			total += cartItem.quantity;
+		});
+		return total;
 	}
 	
 	public getTotalPrice (): number
 	{
-		return 20;
+		let total1: number = 0;
+		this.cartItems.forEach((cartItem : CartItem ) => {
+			total1 += cartItem.quantity * cartItem.product.price;
+		});
+		return total1;
 	}
 
 	// cartItem[0] :
@@ -77,16 +86,21 @@ export class Cart
 				xhtmlResult += cartItemCurrent.showCardItemHTML(Number(i+1));
 			}
 		}
-		else
-		{
-			xhtmlResult += `<tr><th colspan='6'>Empty product in your cart</th></tr>`;
-		}
 
 		return xhtmlResult;
 	}
 
-	public showCartFooterInHTML () :string
+	public showCartFooterInHTML() :string
 	{
-		return "123";
+		let xhtmlResult :string= `<tr><th colspan='6'>Empty product in your cart</th></tr>`;
+
+		if(!this.isEmpty())
+		{
+			xhtmlResult = `<tr>
+				<td colspan = "4">There are <b>${ this.getTotalQuantity() }</b> items in your shopping cart.</td>
+				<td colspan = "2" class="total-price text-left">${ Helpers.toCurrency(this.getTotalPrice() ,"VND","right")}</td>
+			</tr>`
+		}
+		return xhtmlResult;
 	}
 }

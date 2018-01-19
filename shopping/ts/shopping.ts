@@ -52,7 +52,7 @@ function showCart()
 	$(MElement.ELM_CART_BODY).html(cartObj.showCartBodyInHTML());
 
 	// Hiển thi số lượng và giá tiền của sản phẩm trong giỏ hàng
-	$(MElement.ELM_CART_FOOTER).html("");
+	$(MElement.ELM_CART_FOOTER).html(cartObj.showCartFooterInHTML());
 }
 
 

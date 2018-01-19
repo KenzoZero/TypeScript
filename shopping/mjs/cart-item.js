@@ -8,7 +8,6 @@ class CartItem {
     }
     showCardItemHTML(index) {
         // Đối tượng this cũng là 1 cartItem có 2 phần tử: _product và _quantity
-        console.log(this);
         let name = this.product.name;
         let price = helpers_1.Helpers.toCurrency(this.product.price, "VND", "right");
         let quantity = this.quantity;
