@@ -8,6 +8,7 @@ class CartItem {
     }
     showCardItemHTML(index) {
         // Đối tượng this cũng là 1 cartItem có 2 phần tử: _product và _quantity
+        let id = this.product.id;
         let name = this.product.name;
         let price = helpers_1.Helpers.toCurrency(this.product.price, "VND", "right");
         let quantity = this.quantity;
@@ -16,10 +17,10 @@ class CartItem {
 					<th scope="row">${index}</th>
 					<td>${name}</td>
 					<td>${price}</td>
-					<td><input name="cart-item-quantity-100" type="number" value="${quantity}" min="1"></td>
+					<td><input name="cart-item-quantity-${id}" type="number" value="${quantity}" min="1"></td>
 					<td><strong>${total}</strong></td>
 					<td>
-						<a class="label label-info update-cart-item" href="#" data-product="100">Update</a>
+						<a class="label label-info update-cart-item" href="#" data-product="${id}">Update</a>
 						<a class="label label-danger delete-cart-item" href="#" data-product="100">Delete</a>
 					</td>
 				</tr>`;

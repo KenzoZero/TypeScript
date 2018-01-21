@@ -42,8 +42,10 @@ export class Cart
 		return -1;
 	}
 
-	public updateProduct(product: Product, quantity:number = 1):void{
 
+	public updateProduct(product: Product, quantity:number = 1):void{
+		console.log(product);
+		console.log(quantity);
 	}
 
 	removeProduct(product:Product):void{

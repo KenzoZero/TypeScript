@@ -67,11 +67,9 @@ $(document).ready(function(){
 	// Update thông báo
 	showNotification(MNotification.NOTI_READY_TO_BUY);
 
-	$("a.price").click(function(){
-		let id:number = $(this).data("product");
-		parseInt
-		let quantity: number = Number($("input[name = 'quantity-product-"+id+"']").val());
-		
+	// Phương thức thêm sản phẩm
+	function addProductShopping(id:number,quantity:number)
+	{
 		if(Validate.checkQuantity(quantity))
 		{
 			// Lấy sản phẩm bằng id
@@ -84,5 +82,37 @@ $(document).ready(function(){
 		{
 			showNotification(MNotification.NOTI_GREATE_THAN_ONE);
 		}
+	}
+
+	// Phương thức chỉnh sửa sản phẩm
+	function updateProductShopping(id:number,quantity:number)
+	{
+		if(Validate.checkQuantity(quantity))
+		{
+			// Lấy sản phẩm bằng id
+			let product:Product = productRepository.getItemById(id);
+			cartObj.updateProduct(product,quantity);
+			showCart();
+			// Sau khi mua thánh công cần cập nhật lại giỏ hàng
+		}
+		else
+		{
+			showNotification(MNotification.NOTI_GREATE_THAN_ONE);
+		}
+	}
+
+	// Event mua sản phẩm
+	$("a.price").click(function(){
+		let id:number = $(this).data("product");
+		let quantity: number = Number($("input[name = 'quantity-product-"+id+"']").val());
+		addProductShopping(id,quantity);
+		
+	});
+
+	// Event Update sản phẩm => Dùng $(document).on vì khi load xong trong click mua thì mới có nut Update
+	$(document).on("click","a.update-cart-item",function(){
+		let id:number = $(this).data("product");
+		let quantity: number = Number($("input[name = 'cart-item-quantity-"+id+"']").val());
+		updateProductShopping(id,quantity);
 	});
 })

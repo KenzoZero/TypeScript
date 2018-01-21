@@ -5,6 +5,8 @@ const helpers_1 = require("./libs/helpers");
 class Cart {
     constructor() {
         this.cartItems = [];
+        this.totalQuantity = 0;
+        this.totalPrice = 0;
     }
     // Phương thức them sản phẩm
     addProduct(product, quantity = 1) {
@@ -20,6 +22,8 @@ class Cart {
             // Nếu chưa tồn tại thì thêm vô,
             this.cartItems[this.cartItems.length] = cartItem;
         }
+        this.totalQuantity += quantity;
+        this.totalPrice += product.price * quantity;
     }
     // Phương thức dùng để kiểm tra sản phẩm đã tồn tại trong giỏ hàng hay chưa ?
     // => Nhận 1 sản và xem sản phẩm chỉ số bao nhiêu trong mảng cartItems
@@ -34,6 +38,8 @@ class Cart {
         return -1;
     }
     updateProduct(product, quantity = 1) {
+        console.log(product);
+        console.log(quantity);
     }
     removeProduct(product) {
     }
@@ -41,21 +47,23 @@ class Cart {
         // Nếu mà bằng 0 thì true, và không bằng 0 thì false
         return (this.cartItems.length == 0);
     }
-    getTotalQuantity() {
+    /*public getTotalQuantity ():number
+    {
         // Gần vòng lặp theo cách mới => dùng foreach và arrow function
-        let total = 0;
-        this.cartItems.forEach((cartItem) => {
+        let total:number = 0;
+        this.cartItems.forEach((cartItem : CartItem ) => {
             total += cartItem.quantity;
         });
         return total;
-    }
-    getTotalPrice() {
-        let total1 = 0;
-        this.cartItems.forEach((cartItem) => {
+    }*/
+    /*public getTotalPrice (): number
+    {
+        let total1: number = 0;
+        this.cartItems.forEach((cartItem : CartItem ) => {
             total1 += cartItem.quantity * cartItem.product.price;
         });
         return total1;
-    }
+    }*/
     // cartItem[0] :
     // cartItem[1]
     showCartBodyInHTML() {
@@ -74,8 +82,8 @@ class Cart {
         let xhtmlResult = `<tr><th colspan='6'>Empty product in your cart</th></tr>`;
         if (!this.isEmpty()) {
             xhtmlResult = `<tr>
-				<td colspan = "4">There are <b>${this.getTotalQuantity()}</b> items in your shopping cart.</td>
-				<td colspan = "2" class="total-price text-left">${helpers_1.Helpers.toCurrency(this.getTotalPrice(), "VND", "right")}</td>
+				<td colspan = "4">There are <b>${this.totalQuantity}</b> items in your shopping cart.</td>
+				<td colspan = "2" class="total-price text-left">${helpers_1.Helpers.toCurrency(this.totalPrice, "VND", "right")}</td>
 			</tr>`;
         }
         return xhtmlResult;
