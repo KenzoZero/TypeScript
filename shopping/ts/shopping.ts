@@ -79,7 +79,6 @@ $(document).ready(function(){
 			cartObj.addProduct(product,quantity);
 			showCart();
 			// Sau khi mua thánh công cần cập nhật lại giỏ hàng
-
 		}
 		else
 		{
