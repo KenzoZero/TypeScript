@@ -48,6 +48,14 @@ class Cart {
         }
     }
     removeProduct(product) {
+        let position = this.getProductPosition(product);
+        let oldQuantity = this.cartItems[position].quantity;
+        if (position > -1) {
+            // Dùng hàm splice để xóa phần tử trong mảng
+            this.cartItems.splice(position, 1);
+            this.totalQuantity = this.totalQuantity - oldQuantity;
+            this.totalPrice = this.totalPrice - product.price * oldQuantity;
+        }
     }
     isEmpty() {
         // Nếu mà bằng 0 thì true, và không bằng 0 thì false

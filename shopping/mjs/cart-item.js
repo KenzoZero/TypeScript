@@ -21,7 +21,7 @@ class CartItem {
 					<td><strong>${total}</strong></td>
 					<td>
 						<a class="label label-info update-cart-item" href="#" data-product="${id}">Update</a>
-						<a class="label label-danger delete-cart-item" href="#" data-product="100">Delete</a>
+						<a class="label label-danger delete-cart-item" href="#" data-product="${id}">Delete</a>
 					</td>
 				</tr>`;
     }

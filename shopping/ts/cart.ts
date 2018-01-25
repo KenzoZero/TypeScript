@@ -56,8 +56,16 @@ export class Cart
 		}
 	}
 
-	removeProduct(product:Product):void{
-
+	public removeProduct(product:Product):void{
+		let position : number = this.getProductPosition(product);
+		let oldQuantity = this.cartItems[position].quantity;
+		if(position > -1)
+		{
+			// Dùng hàm splice để xóa phần tử trong mảng
+			this.cartItems.splice(position,1);
+			this.totalQuantity = this.totalQuantity - oldQuantity;
+			this.totalPrice = this.totalPrice - product.price*oldQuantity;
+		}
 	}
 
 	public isEmpty() : boolean

@@ -75,6 +75,12 @@ $(document).ready(function () {
             showNotification(MNotification.NOTI_GREATE_THAN_ONE);
         }
     }
+    // Phương thức xóa sản phẩm
+    function deleteProductShopping(id) {
+        let product = productRepository.getItemById(id);
+        cartObj.removeProduct(product);
+        showCart();
+    }
     // Event mua sản phẩm
     $("a.price").click(function () {
         let id = $(this).data("product");
@@ -86,5 +92,10 @@ $(document).ready(function () {
         let id = $(this).data("product");
         let quantity = Number($("input[name = 'cart-item-quantity-" + id + "']").val());
         updateProductShopping(id, quantity);
+    });
+    // Event Delete product
+    $(document).on("click", "a.delete-cart-item", function () {
+        let id = $(this).data("product");
+        deleteProductShopping(id);
     });
 });
