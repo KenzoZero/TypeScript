@@ -38,8 +38,14 @@ class Cart {
         return -1;
     }
     updateProduct(product, quantity = 1) {
-        console.log(product);
-        console.log(quantity);
+        let position = this.getProductPosition(product);
+        let oldQuantity = this.cartItems[position].quantity;
+        // Nếu có sản phẩm thì update lại số lượng
+        if (position > -1) {
+            this.cartItems[position].quantity = quantity;
+            this.totalQuantity = this.totalQuantity - oldQuantity + quantity;
+            this.totalPrice = this.totalPrice - product.price * (oldQuantity - quantity);
+        }
     }
     removeProduct(product) {
     }
