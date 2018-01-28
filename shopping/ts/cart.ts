@@ -115,7 +115,6 @@ export class Cart
 	public showCartFooterInHTML() :string
 	{
 		let xhtmlResult :string= `<tr><th colspan='6'>Empty product in your cart</th></tr>`;
-
 		if(!this.isEmpty())
 		{
 			xhtmlResult = `<tr>

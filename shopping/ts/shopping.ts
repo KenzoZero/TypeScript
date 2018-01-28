@@ -20,6 +20,10 @@ namespace MNotification
 {
 	export const NOTI_READY_TO_BUY : string = "Ready to buy product";
 	export const NOTI_GREATE_THAN_ONE = "Quantity must equal or greater 1 and is Number";
+	export const NOTI_ACT_ADD : string = "Added successful";
+	export const NOTI_ACT_UPDATE : string = "Update successfull";
+	export const NOTI_ACT_DELETE : string = "Delete successfull";
+
 
 }
 
@@ -75,8 +79,9 @@ $(document).ready(function(){
 			// Lấy sản phẩm bằng id
 			let product:Product = productRepository.getItemById(id);
 			cartObj.addProduct(product,quantity);
-			showCart();
 			// Sau khi mua thánh công cần cập nhật lại giỏ hàng
+			showCart();
+			showNotification(MNotification.NOTI_ACT_ADD);
 		}
 		else
 		{
@@ -92,8 +97,9 @@ $(document).ready(function(){
 			// Lấy sản phẩm bằng id
 			let product:Product = productRepository.getItemById(id);
 			cartObj.updateProduct(product,quantity);
-			showCart();
 			// Sau khi mua thánh công cần cập nhật lại giỏ hàng
+			showCart();
+			showNotification(MNotification.NOTI_ACT_UPDATE);
 		}
 		else
 		{
@@ -107,6 +113,7 @@ $(document).ready(function(){
 		let product:Product = productRepository.getItemById(id);
 		cartObj.removeProduct(product);
 		showCart();
+		showNotification(MNotification.NOTI_ACT_DELETE);
 	}
 
 	// Event mua sản phẩm

@@ -18,6 +18,9 @@ var MNotification;
 (function (MNotification) {
     MNotification.NOTI_READY_TO_BUY = "Ready to buy product";
     MNotification.NOTI_GREATE_THAN_ONE = "Quantity must equal or greater 1 and is Number";
+    MNotification.NOTI_ACT_ADD = "Added successful";
+    MNotification.NOTI_ACT_UPDATE = "Update successfull";
+    MNotification.NOTI_ACT_DELETE = "Delete successfull";
 })(MNotification || (MNotification = {}));
 // Tạo đối tượng
 let productRepository = new product_repository_1.ProductRepository();
@@ -55,8 +58,9 @@ $(document).ready(function () {
             // Lấy sản phẩm bằng id
             let product = productRepository.getItemById(id);
             cartObj.addProduct(product, quantity);
-            showCart();
             // Sau khi mua thánh công cần cập nhật lại giỏ hàng
+            showCart();
+            showNotification(MNotification.NOTI_ACT_ADD);
         }
         else {
             showNotification(MNotification.NOTI_GREATE_THAN_ONE);
@@ -68,8 +72,9 @@ $(document).ready(function () {
             // Lấy sản phẩm bằng id
             let product = productRepository.getItemById(id);
             cartObj.updateProduct(product, quantity);
-            showCart();
             // Sau khi mua thánh công cần cập nhật lại giỏ hàng
+            showCart();
+            showNotification(MNotification.NOTI_ACT_UPDATE);
         }
         else {
             showNotification(MNotification.NOTI_GREATE_THAN_ONE);
@@ -80,6 +85,7 @@ $(document).ready(function () {
         let product = productRepository.getItemById(id);
         cartObj.removeProduct(product);
         showCart();
+        showNotification(MNotification.NOTI_ACT_DELETE);
     }
     // Event mua sản phẩm
     $("a.price").click(function () {
